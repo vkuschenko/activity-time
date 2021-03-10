@@ -16,6 +16,7 @@ export class ActivityTime {
 
   getRecordsForDate(date) {
     this.selectedDate = date;
+
     getFakeData(date).then((records) => {
       this.records = processData(date, records);
     });
