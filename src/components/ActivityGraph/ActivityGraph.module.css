@@ -1,0 +1,48 @@
+@value colors: "../../colors.module.css";
+@value white, grey, black, bubbleRed from colors;
+
+.graph {
+  width: 652px;
+  padding: 16px 24px;
+  background-color: black;
+  color: grey;
+  font: 700 16px "Roboto", sans-serif;
+}
+
+.caption {
+  font: 700 32px "Roboto", sans-serif;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.timeAxis {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hours {
+  display: flex;
+}
+
+.hour {
+  position: relative;
+  width: 25px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.label {
+  margin-top: 2px;
+  height: 20px;
+  line-height: 16px;
+  border-top: solid 2px grey;
+  text-align: center;
+}
+
+.bubble {
+  border-radius: 50%;
+  background-color: bubbleRed;
+  position: absolute;
+}
