@@ -66,7 +66,7 @@ export const generateData = (date) => {
 
 export const getFakeData = (date) => {
   if (dayjs(date).isToday()) {
-    return fixedData;
+    return Promise.resolve(fixedData);
   }
-  return generateData(date);
+  return Promise.resolve(generateData(date));
 };

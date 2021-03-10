@@ -13,6 +13,8 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
     "dayjs": "^1.10.4",
+    "mobx": "^6.1.8",
+    "mobx-react": "^7.1.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-datepicker": "^3.6.0",

@@ -1,3 +1,28 @@
+@value colors: "../../colors.module.css";
+@value white, grey, black from colors;
+
 .app {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 16px;
+  border: solid 2px grey;
+  border-radius: 16px;
+}
+
+.datePickerWrapper {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
   display: flex;
+  justify-content: center;
+  border-bottom: solid 2px grey;
+}
+
+.datePicker {
+  border: solid 2px grey;
+  border-radius: 4px;
+  color: white;
+  font: 700 14px "Roboto", sans-serif;
+  background: black;
+  outline: none;
+  text-align: center;
 }

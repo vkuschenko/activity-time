@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import styles from "./App.module.css";
 import DatePicker from "react-datepicker";
+import { observer } from "mobx-react";
 import "react-datepicker/dist/react-datepicker.css";
 import { ActivityGraph } from "../ActivityGraph";
-import { processData } from "../../utils";
-import { getFakeData } from "../../mock-data";
 
-export const App = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-
-  const data = processData(selectedDate, getFakeData(selectedDate));
-  debugger;
-
-  return (
-    <div className={styles.app}>
+export const App = ({ selectedDate, records, onDateChange }) => (
+  <div className={styles.app}>
+    <div className={styles.datePickerWrapper}>
       <DatePicker
         selected={selectedDate}
-        onChange={(date) => setSelectedDate(date)}
+        onChange={onDateChange}
+        className={styles.datePicker}
       />
-      <ActivityGraph values={data} />
     </div>
-  );
-};
+    <ActivityGraph values={records} />
+  </div>
+);
+
+export default observer(({ activityTime }) => (
+  <App
+    selectedDate={activityTime.selectedDate}
+    records={activityTime.records}
+    onDateChange={(date) => activityTime.getRecordsForDate(date)}
+  />
+));
